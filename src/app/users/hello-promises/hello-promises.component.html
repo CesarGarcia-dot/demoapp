@@ -1,0 +1,74 @@
+<div class="">
+  <section class="antialiased bg-gray-100  text-gray-600 px-4">
+    <div class="flex flex-col justify-center h-full">
+      <!-- table -->
+      <div class="bg-white shadow-lg rounded-sm border border-gray-200">
+        <header class="px-5 py-4 border-b border-gray-100 max-w-xl">
+          <h2 class="font-semibold text-gray-800">Posts</h2>
+        </header>
+        <div class="p-3">
+          <div class="overflow-x-auto">
+            <table class="table-auto w-full">
+              <thead class="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
+                <tr>
+                  <th class="p-2 whitespace-nowrap">
+                    <div class="font-semibold text-left">#</div>
+                  </th>
+                  <th class="p-2 whitespace-nowrap">
+                    <div class="font-semibold text-left">UID</div>
+                  </th>
+                  <th class="p-2 whitespace-nowrap">
+                    <div class="font-semibold text-left">Title</div>
+                  </th>
+                  <th class="p-2 whitespace-nowrap">
+                    <div class="font-semibold text-left">Body</div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="text-sm divide-y divide-gray-100">
+                <tr *ngFor="let result of data">
+                  <td class="p-2 whitespace-nowrap">
+                    <div class="text-left">{{result.id}}</div>
+                  </td>
+                  <td class="p-2 whitespace-nowrap">
+                    <div class="text-left">{{result.userId}}</div>
+                  </td>
+                  <td class="p-2 whitespace-nowrap">
+                    <div class="text-left">{{result.title}}</div>
+                  </td>
+                  <td class="p-1 break-all">
+                    <div class="text-left">{{result.body}}</div>
+                  </td>
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</div>
+
+
+
+<!-- <table class="table table-striped">
+  <thead>
+    <tr class="table-info">
+      <th scope="col">#</th>
+      <th scope="col">UID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Body</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let result of data">
+      <th scope="row">{{result.id}}</th>
+      <td>{{result.userId}}</td>
+      <td>{{result.title}}</td>
+      <td>{{result.body}}</td>
+    </tr>
+  </tbody>
+</table> -->

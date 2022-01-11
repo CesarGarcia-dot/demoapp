@@ -1,0 +1,45 @@
+<div class="container" style="padding-top: 9px; padding-bottom: 9px;">
+
+  <div class="mb-3">
+    <mat-form-field appearance="outline">
+      <mat-label>Search</mat-label>
+      <input #postSearchInput matInput placeholder="Search">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="posts.length"></ngb-pagination>
+
+  <div *ngFor="let item of posts | slice: (page-1) * pageSize : page * pageSize">
+    <mat-card class="example-card mt-4 mat-elevation-z4">
+      <mat-card-title>{{item.title}}</mat-card-title>
+      <mat-card-subtitle><a [routerLink]="['detail', item.authorId ]">{{item.author}}</a></mat-card-subtitle>
+      <mat-card-content>
+        <p>This card indeterminates progress bar.</p>
+        <p>{{longText}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <!-- <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button> -->
+      </mat-card-actions>
+      <mat-card-footer>
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+              </mat-panel-title>
+              <mat-panel-description>
+                Comments
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <app-item-todo [post]="item"></app-item-todo>
+
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-card-footer>
+
+    </mat-card>
+  </div>
+
+</div>
