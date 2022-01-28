@@ -15,8 +15,8 @@ export class UserService {
 
   requestUrl = environment.devUsersUrl;
 
-  users$ = (page: number, results: number) =>
-    this.http.get<User[]>(this.requestUrl + `?page=${page + 1}` + `&results=${results}&seed=abc`)
+  users$ = (page: number, results: number) : Observable<User[]> =>
+    this._http.get<User[]>(this.requestUrl + `?page=${page + 1}` + `&results=${results}&seed=abc`)
       .pipe(
         map((data: any) => data.results),
         // tap(data => console.log('Users: ', JSON.stringify(data))),
@@ -25,7 +25,7 @@ export class UserService {
       );
 
   constructor(
-    private http: HttpClient
+    private _http: HttpClient
   ) {
 
   }

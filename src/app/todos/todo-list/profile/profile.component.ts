@@ -9,7 +9,7 @@ import { Profile } from '../../profile';
 })
 export class ProfileComponent implements OnInit {
 
-  profile: Profile = Object.assign({});
+  profile: Profile = Object.assign({ name: ""});
 
   constructor(
     private route: ActivatedRoute,

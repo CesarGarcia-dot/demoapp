@@ -1,4 +1,10 @@
+import { HttpHandler, HttpClient } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ActivatedRoute } from '@angular/router';
+import { NgMaterialModule } from 'src/app/ng-material/ng-material.module';
+import { ProfileResolver } from 'src/app/todos/profile.resolver';
+import { UserService } from '../user.service';
 
 import { UserListComponent } from './user-list.component';
 
@@ -8,7 +14,17 @@ describe('UserListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserListComponent ]
+      imports:[
+        NgMaterialModule,
+        BrowserAnimationsModule
+      ],
+      declarations: [ UserListComponent ],
+      providers: [
+        HttpHandler,
+        HttpClient,
+        UserService,
+        ProfileResolver
+      ]
     })
     .compileComponents();
   });

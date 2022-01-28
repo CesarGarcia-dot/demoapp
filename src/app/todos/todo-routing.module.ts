@@ -4,7 +4,7 @@ import { ProfileResolver } from './profile.resolver';
 import { ProfileComponent } from './todo-list/profile/profile.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', component: TodoListComponent },
   {
     path: 'todo', component: TodoListComponent

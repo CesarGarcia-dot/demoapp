@@ -1,4 +1,9 @@
+import { HttpHandler, HttpClient } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ActivatedRoute } from '@angular/router';
+import { NgMaterialModule } from 'src/app/ng-material/ng-material.module';
+import { TodoService } from '../todo.service';
 
 import { TodoListComponent } from './todo-list.component';
 
@@ -8,7 +13,16 @@ describe('TodoListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TodoListComponent ]
+      imports: [
+        NgMaterialModule,
+        BrowserAnimationsModule
+      ],
+      declarations: [ TodoListComponent ],
+      providers: [
+        HttpHandler,
+        HttpClient,
+        TodoService
+      ]
     })
     .compileComponents();
   });

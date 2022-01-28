@@ -36,12 +36,12 @@ export class UserListComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.loadData();
-   
+
   }
 
   loadData() {
     this.isLoading = true;
-
+    this.paginator.pageIndex = 0 ;
     this.users$ = this.userService.users$(this.currentPage, this.pageSize);
     this.paginator.pageIndex = this.currentPage;
     this.users$.subscribe((x) => {

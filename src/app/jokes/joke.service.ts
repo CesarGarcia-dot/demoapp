@@ -33,22 +33,22 @@ export class JokeService {
   constructor(private http: HttpClient) { }
 
   // This method is responsible for fetching the data.
-  // The first one who calls this function will initiate 
+  // The first one who calls this function will initiate
   // the process of fetching data.
 
-  get jokes() {
+  get jokes(): Observable<Joke[]>{
     if (!this.cache$) {
       // Set up timer that ticks every X milliseconds
       const timer$ = timer(0, REFRESH_INTERVAL);
 
       // For each timer tick make an http request to fetch new data
-      // We use shareReplay(X) to multicast the cache so that all 
-      // subscribers share one underlying source and don't re-create 
+      // We use shareReplay(X) to multicast the cache so that all
+      // subscribers share one underlying source and don't re-create
       // the source over and over again. We use takeUntil to complete
       // this stream when the user forces an update.
 
       this.cache$ = timer$.pipe(
-        // Projects each source value to an Observable which is merged in 
+        // Projects each source value to an Observable which is merged in
         // the output Observable, emitting values only from the most recently projected Observable
         switchMap(() => this.requestJokes()),
         //Emits the values emitted by the source Observable until a notifier Observable emits a value.
