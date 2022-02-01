@@ -86,11 +86,11 @@ describe('ProfileComponent', () => {
   //   expect(resolve).toBeTruthy();
   // });
 
-  it('should create', () => {
-    spyOn(mockSomeService, 'getData').and.returnValue({ subscribe: () => {} })
-    // activatedRoute = new ActivatedRouteStub();
-    // activatedRoute.setParamMap({id:1});
-    // fixture =  TestBed.createComponent(ProfileComponent);
-    expect(mockSomeService.getData).toHaveBeenCalled();
-  });
+  // it('should create', () => {
+  //   // spyOn(mockSomeService, 'getData').and.returnValue({ subscribe: () => {} })
+  //   // activatedRoute = new ActivatedRouteStub();
+  //   // activatedRoute.setParamMap({id:1});
+  //   // fixture =  TestBed.createComponent(ProfileComponent);
+  //   // expect(mockSomeService.getData).toHaveBeenCalled();
+  // });
 });

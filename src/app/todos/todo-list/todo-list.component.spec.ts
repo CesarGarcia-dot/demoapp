@@ -2,6 +2,7 @@ import { HttpHandler, HttpClient } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ActivatedRoute } from '@angular/router';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgMaterialModule } from 'src/app/ng-material/ng-material.module';
 import { TodoService } from '../todo.service';
 
@@ -15,7 +16,8 @@ describe('TodoListComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         NgMaterialModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        NgbPaginationModule
       ],
       declarations: [ TodoListComponent ],
       providers: [

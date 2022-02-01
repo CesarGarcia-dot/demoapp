@@ -1,17 +1,17 @@
-<mat-toolbar color="primary" class="mat-elevation-z4">
+<mat-toolbar color='primary' class='mat-elevation-z4'>
   <span>My App</span>
-  <span class="example-spacer"></span>
-  <button mat-button [routerLink]="['/users']" routerLinkActive="active">
+  <span class='example-spacer'></span>
+  <a mat-button [routerLink]="['/users']" routerLinkActive='active'>
     1 Users
-  </button>
-  <button mat-button [routerLink]="['/todo']" routerLinkActive="active" aria-current="page">
+  </a>
+  <a mat-button [routerLink]="['/todo']" routerLinkActive='active' aria-current='page'>
     2 Posts
-  </button>
-  <button mat-button [routerLink]="['/jokes']" routerLinkActive="active">
+  </a>
+  <a mat-button [routerLink]="['/jokes']" routerLinkActive='active'>
     3 Jokes
-  </button>
-  <button mat-button [routerLink]="['/users/hello']" routerLinkActive="active">
+  </a>
+  <a mat-button [routerLink]="['/users/hello']" routerLinkActive='active'>
     Hello Promises
-  </button>
+  </a>
 </mat-toolbar>
 <router-outlet></router-outlet>
