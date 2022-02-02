@@ -1,7 +1,7 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
-import { catchError, count, EMPTY, interval, map, merge, Observable, startWith, switchMap, tap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { User } from '../user';
 import { UserService } from '../user.service';
 
